@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Example"
+             x:Class="Example.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Target tags..." Margin="0, 20, 0, 10"/>
+            <Picker x:Name="selectionPicker"></Picker>
+            <Label Text="Operations to execute on target tags..." Margin="0, 20, 0, 10"/>
+            <Picker x:Name="operationPicker"></Picker>
+            <Label Text="Execution settings..." Margin="0, 20, 0, 10"/>
+            <Picker x:Name="settingsPicker"></Picker>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Execute"
+                    HorizontalOptions="Start"
+                    Margin="10"
+                    BorderWidth="1"
+                    Clicked="OnExecuteButtonClicked" />
+                <Button Text="StartExecution"
+                    HorizontalOptions="Center"
+                        Margin="10"
+                    BorderWidth="1"
+                    Clicked="OnStartExecutionButtonClicked" />
+                <Label Text="" x:Name="asyncCountLabel" VerticalOptions="Center"/>
+            </StackLayout>
+
+
+            <ListView x:Name="listView">
+                
+                <!--ItemsSource="{Binding Items}"
+                --><!--CachingStrategy="RecycleElement"--><!--
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label
+                                    Text="{Binding Epc}"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemTextStyle}"
+                                    FontSize="16" />
+                                <Label
+                                    Text="{Binding Rssi}"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemDetailTextStyle}"
+                                    FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>-->
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

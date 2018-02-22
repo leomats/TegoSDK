@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TegoOS.Lic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TegoOS.Lic" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PCLCrypto" Version="2.0.147" />
+    <PackageReference Include="rda.SocketsForPCL" Version="2.0.2" />
+    <PackageReference Include="Tsl.AsciiProtocol" Version="0.9.5" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
+      <DependentUpon>*.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Libraries %28Portable%29\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tego">
+      <HintPath>Libraries (Portable)\Tego.dll</HintPath>
+    </Reference>
+    <Reference Include="Tego.Devices.Simulated">
+      <HintPath>Libraries (Portable)\Tego.Devices.Simulated.dll</HintPath>
+    </Reference>
+    <Reference Include="Tego.Devices.TechnologySolutions">
+      <HintPath>Libraries (Portable)\Tego.Devices.TechnologySolutions.dll</HintPath>
+    </Reference>
+    <Reference Include="Tego.Devices.Zeti">
+      <HintPath>Libraries (Portable)\Tego.Devices.Zeti.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
